@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/stylesheets/pure-min.css">
+    <link rel="stylesheet" href="/stylesheets/fonts.css">
+    <link rel="stylesheet" href="/stylesheets/book_viewer.css">
+  </head>
+
+  <body>
+    <div id="layout">
+      <a href="#menu" id="menuLink" class="menu-link"><span></span></a>
+
+      <div id="menu">
+        <div class="pure-menu">
+          <ul class="pure-menu-list">
+            
+          </ul>
+        </div>
+      </div>
+
+      <div id="main">
+        <div class="header">
+          <h3>user_viewer</h3>
+        </div>
+
+        <div class="content">
+          <%= yield %>
+        </div>
+          <div>
+      <% interests_arr = [] %>
+      <% @users.each_value do |details| %>
+        <% interests_arr << details[:interests] %>
+      <% end %>
+
+      <p align="center">There are <%= @users.count %> users with a total of <%= interests_arr.flatten.count %> interests.</p>
+    </div>
+
+      </div>
+    </div>
+
+    <script type="text/javascript" src="javascripts/ui.js"></script>
+  </body>
+</html>

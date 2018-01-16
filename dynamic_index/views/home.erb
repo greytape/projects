@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+
+</head>
+
+<body>
+
+<% @files.each do |file| %>
+  <li>
+    <a href="<%= file %>"><%= file %></a>
+  </li>
+<% end %>
+
+  <p><a href="/">List A-Z</a></p>
+  <p><a href="reversed">List Z-A</a></p>
+
+</body>
+</html>
